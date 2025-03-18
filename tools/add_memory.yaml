@@ -1,0 +1,52 @@
+identity:
+  name: add_zep_memory
+  author: obadakhalili
+  label:
+    en_US: Add Zep memory
+
+description:
+  human:
+    en_US: Add Zep memory
+  llm: Add Zep memory
+
+parameters:
+  - name: user_id
+    type: string
+    required: true
+    label:
+      en_US: User ID
+    human_description:
+      en_US: The user ID the memory belongs to
+    llm_description: The user ID the memory belongs to
+    form: llm
+  - name: session_id
+    type: string
+    required: true
+    label:
+      en_US: Session ID
+    human_description:
+      en_US: The session ID the memory will be stored in
+    llm_description: The session ID the memory will be stored in
+    form: llm
+  - name: user_message
+    type: string
+    required: true
+    label:
+      en_US: User Message
+    human_description:
+      en_US: User message from conversation
+    llm_description: User message from conversation
+    form: llm
+  - name: assistant_response
+    type: string
+    required: true
+    label:
+      en_US: Assistant Response
+    human_description:
+      en_US: Assistant response to user message
+    llm_description: Assistant response to user message
+    form: llm
+
+extra:
+  python:
+    source: tools/add_memory.py
