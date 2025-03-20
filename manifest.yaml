@@ -5,7 +5,7 @@ name: zep
 label:
   en_US: Zep
 description:
-  en_US: Dify Zep plugin
+  en_US: Dify tools plugin to add and retrieve Zep memory
 icon: zep.png
 resource:
   memory: 268435456
