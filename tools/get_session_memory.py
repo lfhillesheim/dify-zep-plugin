@@ -6,7 +6,6 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 from zep_cloud.client import Zep
-from zep_cloud.core.api_error import ApiError
 
 
 class GetSessionMemoryTool(Tool):
@@ -33,12 +32,8 @@ class GetSessionMemoryTool(Tool):
             yield self.create_json_message(
                 {"status": "success", "memory": json.loads(memory.json())}
             )
-            yield self.create_text_message(memory.context)
+            yield self.create_text_message(memory.context or "")
         except Exception as e:
-            # can't I use UnauthorizedError?
-            if isinstance(e, ApiError) and e.status_code == 401:
-                raise e
-            else:
-                err = str(e)
-                yield self.create_json_message({"status": "error", "error": err})
-                yield self.create_text_message(f"failed to retrieve memory: {err}")
+            err = str(e)
+            yield self.create_json_message({"status": "error", "error": err})
+            yield self.create_text_message(f"failed to retrieve memory: {err}")

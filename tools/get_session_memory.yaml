@@ -2,7 +2,7 @@ identity:
   name: get_session_memory
   author: obadakhalili
   label:
-    en_US: Get Session Memory
+    en_US: Get session memory
 
 description:
   human:

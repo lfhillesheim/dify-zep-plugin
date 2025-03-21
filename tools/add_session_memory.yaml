@@ -2,23 +2,14 @@ identity:
   name: add_zep_memory
   author: obadakhalili
   label:
-    en_US: Add Zep memory
+    en_US: Add memory to session
 
 description:
   human:
-    en_US: Add Zep memory
-  llm: Add Zep memory
+    en_US: Add memory to user in a specified session
+  llm: Add memory to user in a specified session
 
 parameters:
-  - name: user_id
-    type: string
-    required: true
-    label:
-      en_US: User ID
-    human_description:
-      en_US: The user ID the memory belongs to
-    llm_description: The user ID the memory belongs to
-    form: llm
   - name: session_id
     type: string
     required: true
@@ -49,4 +40,4 @@ parameters:
 
 extra:
   python:
-    source: tools/add_memory.py
+    source: tools/add_session_memory.py
