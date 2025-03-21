@@ -1,5 +1,6 @@
 from collections.abc import Generator
 from typing import Any
+import json
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -8,29 +9,33 @@ from zep_cloud.client import Zep
 from zep_cloud.core.api_error import ApiError
 
 
-class RetrieveMemoryTool(Tool):
+class GetSessionMemoryTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         try:
             api_key = self.runtime.credentials["zep_api_key"]
 
             client = Zep(api_key=api_key)
 
-            user_sessions = client.user.get_sessions(user_id=tool_parameters["user_id"])
-            if len(user_sessions) > 0:
-                most_recently_updated_session = max(
-                    user_sessions, key=lambda session: session.updated_at
+            try:
+                client.memory.add_session(
+                    user_id=tool_parameters["user_id"],
+                    session_id=tool_parameters["session_id"],
                 )
-                session_context = client.memory.get(
-                    session_id=most_recently_updated_session.session_id
-                ).context
+            except:
+                pass
 
-                yield self.create_json_message(
-                    {"status": "success", "context": session_context}
-                )
-                yield self.create_text_message(session_context)
-            else:
-                yield self.create_json_message({"status": "success", "context": None})
+            memory = client.memory.get(
+                session_id=tool_parameters["session_id"],
+                lastn=tool_parameters.get("lastn"),
+                min_rating=tool_parameters.get("min_rating"),
+            )
+
+            yield self.create_json_message(
+                {"status": "success", "memory": json.loads(memory.json())}
+            )
+            yield self.create_text_message(memory.context)
         except Exception as e:
+            # can't I use UnauthorizedError?
             if isinstance(e, ApiError) and e.status_code == 401:
                 raise e
             else:

@@ -1,0 +1,54 @@
+identity:
+  name: get_session_memory
+  author: obadakhalili
+  label:
+    en_US: Get Session Memory
+
+description:
+  human:
+    en_US: Uses the last n messages from the session to search the user's knowledge graph and retrieve relevant memory for the conversation
+  llm: Uses the last n messages from the session to search the user's knowledge graph and retrieve relevant memory for the conversation
+
+parameters:
+  - name: user_id
+    type: string
+    required: true
+    label:
+      en_US: User ID
+    human_description:
+      en_US: The user ID the session belongs to
+    llm_description: The user ID the session belongs to
+    form: llm
+  - name: session_id
+    type: string
+    required: true
+    label:
+      en_US: Session ID
+    human_description:
+      en_US: The session ID to use to retrieve the memory
+    llm_description: The session ID to use to retrieve the memory
+    form: llm
+  # TODO: add range validation
+  - name: lastn
+    type: number
+    required: false
+    label:
+      en_US: Last N messages
+    human_description:
+      en_US: The number of last messages to use to retrieve the memory
+    llm_description: The number of last messages to use to retrieve the memory
+    form: llm
+  # TODO: must the value be in a specific range?
+  - name: min_rating
+    type: number
+    required: false
+    label:
+      en_US: Minimum rating
+    human_description:
+      en_US: The minimum rating of the memory to retrieve
+    llm_description: The minimum rating of the memory to retrieve
+    form: llm
+
+extra:
+  python:
+    source: tools/get_session_memory.py
