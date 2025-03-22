@@ -21,6 +21,7 @@ credentials_for_provider:
       en_US: Get the API key from your Zep project
 
 tools:
+  - tools/init_session.yaml
   - tools/get_session_memory.yaml
   - tools/add_session_memory.yaml
 
