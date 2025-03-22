@@ -22,6 +22,8 @@ parameters:
   - name: lastn
     type: number
     required: false
+    min: 0
+    max: 50
     label:
       en_US: Last N messages
     human_description:

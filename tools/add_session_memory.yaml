@@ -29,8 +29,15 @@ parameters:
     llm_description: The content of the message to store
     form: llm
   - name: role_type
-    type: string
+    type: select
     required: true
+    options:
+      - value: user
+        label:
+          en_US: User
+      - value: assistant
+        label:
+          en_US: Assistant
     label:
       en_US: Role Type
     human_description:
