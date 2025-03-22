@@ -2,7 +2,7 @@ identity:
   name: init_session
   author: obadakhalili
   label:
-    en_US: Initialize Session
+    en_US: Initialize session
 
 description:
   human:
