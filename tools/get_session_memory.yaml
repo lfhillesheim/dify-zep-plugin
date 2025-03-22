@@ -16,8 +16,8 @@ parameters:
     label:
       en_US: User ID
     human_description:
-      en_US: The user ID the session belongs to
-    llm_description: The user ID the session belongs to
+      en_US: The user ID to create a session for
+    llm_description: The user ID to create a session for
     form: llm
   - name: session_id
     type: string
@@ -25,8 +25,17 @@ parameters:
     label:
       en_US: Session ID
     human_description:
-      en_US: The session ID to use to retrieve the memory
-    llm_description: The session ID to use to retrieve the memory
+      en_US: The session ID to create a session with
+    llm_description: The session ID to create a session with
+    form: llm
+  - name: user_message
+    type: string
+    required: true
+    label:
+      en_US: User Message
+    human_description:
+      en_US: User message from conversation
+    llm_description: User message from conversation
     form: llm
   # TODO: add range validation
   - name: lastn

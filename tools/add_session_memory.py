@@ -19,10 +19,6 @@ class AddSessionMemoryTool(Tool):
                 session_id=tool_parameters["session_id"],
                 messages=[
                     Message(
-                        content=tool_parameters["user_message"],
-                        role_type="user",
-                    ),
-                    Message(
                         content=tool_parameters["assistant_response"],
                         role_type="assistant",
                     ),

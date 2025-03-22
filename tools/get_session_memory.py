@@ -6,6 +6,7 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 from zep_cloud.client import Zep
+from zep_cloud import Message
 
 
 class GetSessionMemoryTool(Tool):
@@ -22,6 +23,16 @@ class GetSessionMemoryTool(Tool):
                 )
             except:
                 pass
+
+            client.memory.add(
+                session_id=tool_parameters["session_id"],
+                messages=[
+                    Message(
+                        content=tool_parameters["user_message"],
+                        role_type="user",
+                    ),
+                ],
+            )
 
             memory = client.memory.get(
                 session_id=tool_parameters["session_id"],
