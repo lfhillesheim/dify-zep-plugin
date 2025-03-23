@@ -1,3 +1,1 @@
-## Privacy
-
-!!! Please fill in the privacy policy of the plugin.
+Please refer to Zep's [Privacy Policy](https://help.getzep.com/legal/privacy-policy).
