@@ -72,3 +72,4 @@ Search through a user's memory for relevant information.
 
 - [ ] What if the user want to use the plugin with different API keys from more than one project?
 - [ ] How to use outside workflow apps?
+- [ ] Use `return_context` in `memory.get()` to use context immediatley.
