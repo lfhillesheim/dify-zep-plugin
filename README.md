@@ -2,6 +2,8 @@
 
 A plugin for Dify that adds memory management using Zep. This helps your AI assistant remember past conversations and user information.
 
+[View on GitHub](https://github.com/obadakhalili/dify-zep-plugin)
+
 ## Setup
 
 1. Install the plugin in your Dify workspace
