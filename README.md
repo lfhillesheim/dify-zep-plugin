@@ -9,6 +9,7 @@ Um plugin para o Dify que adiciona gerenciamento de memória usando o Zep. Isso 
 1. Instale o plugin no seu workspace do Dify
 2. Crie um projeto no Zep e obtenha uma chave de API
 3. Adicione sua chave de API do Zep para autorizar o plugin
+4. (Opcional) Use o campo `zep_api_url` para definir uma URL base customizada da API se estiver usando uma instância do Zep diferente
 
    ![authorize-1](_assets/authorize-1.png)
    ![authorize-2](_assets/authorize-2.png)
