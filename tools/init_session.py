@@ -19,7 +19,7 @@ class InitSessionTool(Tool):
                     user_id=tool_parameters["user_id"],
                     session_id=tool_parameters["session_id"],
                 )
-            except BadRequestError as e:
+            except BadRequestError:
                 # bad request error could only happen if the session already exists, which is fine
                 pass
 
