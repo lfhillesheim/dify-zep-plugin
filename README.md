@@ -66,6 +66,22 @@ Search through a user's memory for relevant information.
 - `Get Session Memory` uses the last n messages in the conversation to compose a query and search the user's memory for relevant information.
 - `Search User Graph` searches the user's memory for a query you provide.
 
+### 5. Delete Session
+
+Removes a session and all of its stored memory.
+
+**Parameters:**
+
+- Session ID - The session to remove
+
+### 6. Get Session
+
+Retrieves details about a session.
+
+**Parameters:**
+
+- Session ID - The session to fetch
+
 ## Example workflow
 
 ![workflow](_assets/workflow.png)
