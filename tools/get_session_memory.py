@@ -38,4 +38,4 @@ class GetSessionMemoryTool(Tool):
         except Exception as e:
             err = str(e)
             yield self.create_json_message({"status": "error", "error": err})
-            yield self.create_text_message(f"failed to retrieve memory: {err}")
+            yield self.create_text_message(f"falha ao recuperar memória: {err}")

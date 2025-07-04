@@ -1,97 +1,97 @@
-# Dify Zep Plugin
+# Plugin Zep para Dify
 
-A plugin for Dify that adds memory management using Zep. This helps your AI assistant remember past conversations and user information.
+Um plugin para o Dify que adiciona gerenciamento de memória usando o Zep. Isso ajuda seu assistente de IA a lembrar conversas passadas e informações do usuário.
 
-[View on GitHub](https://github.com/obadakhalili/dify-zep-plugin)
+[Ver no GitHub](https://github.com/obadakhalili/dify-zep-plugin)
 
-## Setup
+## Instalação
 
-1. Install the plugin in your Dify workspace
-2. Create a Zep project and get an API key
-3. Add your Zep API key to authorize the plugin
+1. Instale o plugin no seu workspace do Dify
+2. Crie um projeto no Zep e obtenha uma chave de API
+3. Adicione sua chave de API do Zep para autorizar o plugin
 
    ![authorize-1](_assets/authorize-1.png)
    ![authorize-2](_assets/authorize-2.png)
 
-## Tools
+## Ferramentas
 
-### 1. Init Session
+### 1. Iniciar Sessão
 
-Creates a Zep user and session if they don't already exist. Must be used first before other tools.
+Cria um usuário e sessão no Zep caso ainda não existam. Deve ser usada primeiro antes das outras ferramentas.
 
-**Parameters:**
+**Parâmetros:**
 
-- User ID - Unique identifier for the user
-- Session ID - Unique identifier for the conversation
+- ID do usuário - Identificador único do usuário
+- ID da sessão - Identificador único da conversa
 
-Returns the created or existing session details.
+Retorna os detalhes da sessão criada ou existente.
 
   ![init-session](_assets/init-session.png)
 
-### 2. Add Message to Session
+### 2. Adicionar Mensagem à Sessão
 
-Saves a message to the conversation memory.
+Salva uma mensagem na memória da conversa.
 
-**Parameters:**
+**Parâmetros:**
 
-- Session ID - The conversation to add to
-- Message - The text content to save
-- Role Type - Who sent the message (user or assistant)
-- Return Context (optional) - If true, also return relevant memory context
-- Ignore Roles (optional) - Roles to ignore when adding the message to graph memory
+- ID da sessão - A conversa que será atualizada
+- Mensagem - O texto a ser salvo
+- Tipo de papel - Quem enviou a mensagem (usuário ou assistente)
+- Retornar contexto (opcional) - Se verdadeiro, retorna também o contexto de memória relevante
+- Ignorar papéis (opcional) - Papéis a serem ignorados ao adicionar a mensagem à memória do grafo
 
   ![add-message.png](_assets/add-message.png)
 
-### 3. Get Session Memory
+### 3. Obter Memória da Sessão
 
-Gets user memory relevant to the last messages in the conversation.
+Obtém a memória do usuário relevante para as últimas mensagens da conversa.
 
-**Parameters:**
+**Parâmetros:**
 
-- Session ID - The conversation to get relevant memory for
-- Last N Messages (optional) - Number of recent messages to check (max 50)
-- Minimum Rating (optional) - Only return memories above this relevance score
+- ID da sessão - A conversa da qual obter a memória
+- Últimas N mensagens (opcional) - Quantidade de mensagens recentes a considerar (máx. 50)
+- Pontuação mínima (opcional) - Somente retornar memórias acima dessa relevância
 
   ![get-memory](_assets/get-memory.png)
 
-### 4. Search User Graph
+### 4. Buscar no Gráfico do Usuário
 
-Search through a user's memory for relevant information.
+Busca na memória do usuário por informações relevantes.
 
-**Parameters:**
+**Parâmetros:**
 
-- User ID - The user to search memories for
-- Query - What to search for in the memory
+- ID do usuário - O usuário para buscar memórias
+- Consulta - O que buscar na memória
 
   ![search-graph](_assets/search-graph.png)
 
-**Difference between `Get Session Memory` and `Search User Graph` tools:**
+**Diferença entre as ferramentas `Obter Memória da Sessão` e `Buscar no Gráfico do Usuário`:**
 
-- `Get Session Memory` uses the last n messages in the conversation to compose a query and search the user's memory for relevant information.
-- `Search User Graph` searches the user's memory for a query you provide.
+- `Obter Memória da Sessão` usa as últimas mensagens da conversa para compor uma consulta e buscar na memória do usuário informações relevantes.
+- `Buscar no Gráfico do Usuário` pesquisa na memória do usuário usando uma consulta fornecida por você.
 
-### 5. Delete Session
+### 5. Excluir Sessão
 
-Removes a session and all of its stored memory.
+Remove uma sessão e toda a sua memória armazenada.
 
-**Parameters:**
+**Parâmetros:**
 
-- Session ID - The session to remove
+- ID da sessão - A sessão a ser removida
 
-### 6. Get Session
+### 6. Obter Sessão
 
-Retrieves details about a session.
+Recupera detalhes de uma sessão.
 
-**Parameters:**
+**Parâmetros:**
 
-- Session ID - The session to fetch
+- ID da sessão - A sessão a ser buscada
 
-## Example workflow
+## Exemplo de fluxo
 
 ![workflow](_assets/workflow.png)
 
-## To-Dos:
+## Tarefas pendentes:
 
-- [ ] What if the user want to use the plugin with different API keys from more than one project?
-- [ ] How to use outside workflow apps?
-- [ ] Use `return_context` in `memory.get()` to use context immediatley.
+- [ ] E se o usuário quiser usar o plugin com chaves de API diferentes de mais de um projeto?
+- [ ] Como usar em aplicativos fora de fluxo de trabalho?
+- [ ] Usar `return_context` em `memory.get()` para utilizar o contexto imediatamente.

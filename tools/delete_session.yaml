@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Delete session
+    pt_BR: Excluir sessão
 
 description:
   human:
     en_US: Delete a session and its memory from Zep
+    pt_BR: Excluir uma sessão e sua memória do Zep
   llm: Delete a session and its memory from Zep
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: Session ID
+      pt_BR: ID da sessão
     human_description:
       en_US: The ID of the session to delete
+      pt_BR: O ID da sessão a ser excluída
     llm_description: The ID of the session to delete
     form: llm
 

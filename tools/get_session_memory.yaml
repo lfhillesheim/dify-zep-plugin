@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Get session memory
+    pt_BR: Obter memória da sessão
 
 description:
   human:
     en_US: Retrieves relevant memory context from the session based on recent messages
+    pt_BR: Recupera contexto de memória relevante da sessão com base nas mensagens recentes
   llm: Retrieves relevant memory context from the session based on recent messages
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: Session ID
+      pt_BR: ID da sessão
     human_description:
       en_US: The session ID to retrieve memory from
+      pt_BR: O ID da sessão da qual obter a memória
     llm_description: The session ID to retrieve memory from
     form: llm
   - name: lastn
@@ -26,8 +30,10 @@ parameters:
     max: 50
     label:
       en_US: Last N messages
+      pt_BR: Últimas N mensagens
     human_description:
       en_US: The number of last messages to use for context retrieval
+      pt_BR: Quantidade de mensagens recentes para usar na recuperação de contexto
     llm_description: The number of last messages to use for context retrieval
     form: llm
   - name: min_rating
@@ -35,8 +41,10 @@ parameters:
     required: false
     label:
       en_US: Minimum rating
+      pt_BR: Pontuação mínima
     human_description:
       en_US: The minimum rating threshold for memory retrieval
+      pt_BR: A pontuação mínima para considerar na recuperação de memória
     llm_description: The minimum rating threshold for memory retrieval
     form: llm
 

@@ -1,1 +1,1 @@
-Please refer to Zep's [Privacy Policy](https://help.getzep.com/legal/privacy-policy).
+Consulte a [Política de Privacidade](https://help.getzep.com/legal/privacy-policy) do Zep.

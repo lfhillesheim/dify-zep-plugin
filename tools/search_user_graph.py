@@ -40,8 +40,8 @@ class SearchUserGraphTool(Tool):
             facts_str = ""
             if len(facts_list):
                 facts_str = f"""
-# These are the most relevant facts and their valid date ranges
-# format: FACT (Date range: from - to)
+# Estes são os fatos mais relevantes e seus intervalos de validade
+# formato: FATO (Data: de - até)
 <FACTS>
 {"\n".join(facts_list)}
 </FACTS>""".strip()
@@ -52,8 +52,8 @@ class SearchUserGraphTool(Tool):
             entities_str = ""
             if len(entities_list):
                 entities_str = f"""
-# These are the most relevant entities
-# ENTITY_NAME: entity summary
+# Estas são as entidades mais relevantes
+# NOME_DA_ENTIDADE: resumo da entidade
 <ENTITIES>
 {"\n".join(entities_list)}
 </ENTITIES>""".strip()
@@ -61,7 +61,7 @@ class SearchUserGraphTool(Tool):
             context_str = ""
             if facts_str or entities_str:
                 context_str = f"""
-FACTS and ENTITIES represent relevant context to the current conversation.
+FACTOS e ENTIDADES representam contexto relevante para a conversa atual.
 
 {facts_str}
 {entities_str}
@@ -74,4 +74,4 @@ FACTS and ENTITIES represent relevant context to the current conversation.
         except Exception as e:
             err = str(e)
             yield self.create_json_message({"status": "error", "error": err})
-            yield self.create_text_message(f"failed to retrieve memory: {err}")
+            yield self.create_text_message(f"falha ao recuperar memória: {err}")

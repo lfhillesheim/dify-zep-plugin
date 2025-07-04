@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Get session
+    pt_BR: Obter sessão
 
 description:
   human:
     en_US: Retrieve details about a session
+    pt_BR: Recuperar detalhes de uma sessão
   llm: Retrieve details about a session
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: Session ID
+      pt_BR: ID da sessão
     human_description:
       en_US: The ID of the session to retrieve
+      pt_BR: O ID da sessão a ser recuperada
     llm_description: The ID of the session to retrieve
     form: llm
 
