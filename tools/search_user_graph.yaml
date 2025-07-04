@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Search user graph
+    pt_BR: Buscar gráfico do usuário
 
 description:
   human:
     en_US: Search user graph for relevant memory using a custom query
+    pt_BR: Buscar no gráfico do usuário por memória relevante usando uma consulta personalizada
   llm: Search user graph for relevant memory using a custom query
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: User ID
+      pt_BR: ID do usuário
     human_description:
       en_US: The user ID to search the graph for
+      pt_BR: O ID do usuário para buscar no gráfico
     llm_description: The user ID to search the graph for
     form: llm
   - name: query
@@ -24,8 +28,10 @@ parameters:
     required: true
     label:
       en_US: Query
+      pt_BR: Consulta
     human_description:
       en_US: The query to use to search the graph
+      pt_BR: A consulta para usar na busca no gráfico
     llm_description: The query to use to search the graph
     form: llm
 

@@ -4,8 +4,10 @@ author: obadakhalili
 name: zep
 label:
   en_US: Zep
+  pt_BR: Zep
 description:
   en_US: Dify memory management plugin using Zep
+  pt_BR: Plugin de gerenciamento de memória do Dify usando Zep
 icon: zep.png
 resource:
   memory: 268435456

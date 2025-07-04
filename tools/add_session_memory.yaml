@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Add message to session
+    pt_BR: Adicionar mensagem à sessão
 
 description:
   human:
     en_US: Add a new message to the session memory
+    pt_BR: Adicione uma nova mensagem à memória da sessão
   llm: Add a new message to the session memory
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: Session ID
+      pt_BR: ID da sessão
     human_description:
       en_US: The session ID to add the message to
+      pt_BR: O ID da sessão para adicionar a mensagem
     llm_description: The session ID to add the message to
     form: llm
   - name: message
@@ -24,8 +28,10 @@ parameters:
     required: true
     label:
       en_US: Message Content
+      pt_BR: Conteúdo da mensagem
     human_description:
       en_US: The content of the message to store
+      pt_BR: O conteúdo da mensagem a ser armazenado
     llm_description: The content of the message to store
     form: llm
   - name: role_type
@@ -35,13 +41,17 @@ parameters:
       - value: user
         label:
           en_US: User
+          pt_BR: Usuário
       - value: assistant
         label:
           en_US: Assistant
+          pt_BR: Assistente
     label:
       en_US: Role Type
+      pt_BR: Tipo de papel
     human_description:
       en_US: The role of the message sender (user/assistant)
+      pt_BR: O papel de quem enviou a mensagem (usuário/assistente)
     llm_description: The role of the message sender (user/assistant)
     form: llm
   - name: return_context
@@ -49,8 +59,10 @@ parameters:
     required: false
     label:
       en_US: Return Context
+      pt_BR: Retornar contexto
     human_description:
       en_US: Whether to return relevant memory context after adding the message
+      pt_BR: Se deve retornar o contexto da memória após adicionar a mensagem
     llm_description: Whether to return relevant memory context after adding the message
     form: llm
   - name: ignore_roles
@@ -60,25 +72,33 @@ parameters:
       - value: user
         label:
           en_US: User
+          pt_BR: Usuário
       - value: assistant
         label:
           en_US: Assistant
+          pt_BR: Assistente
       - value: system
         label:
           en_US: System
+          pt_BR: Sistema
       - value: norole
         label:
           en_US: No Role
+          pt_BR: Sem papel
       - value: tool
         label:
           en_US: Tool
+          pt_BR: Ferramenta
       - value: function
         label:
           en_US: Function
+          pt_BR: Função
     label:
       en_US: Ignore Roles
+      pt_BR: Ignorar papéis
     human_description:
       en_US: Roles to ignore when adding the message to the graph
+      pt_BR: Papéis a serem ignorados ao adicionar a mensagem ao gráfico
     llm_description: Roles to ignore when adding the message to the graph
     form: llm
 

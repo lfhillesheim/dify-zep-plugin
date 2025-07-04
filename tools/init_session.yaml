@@ -3,10 +3,12 @@ identity:
   author: obadakhalili
   label:
     en_US: Initialize session
+    pt_BR: Iniciar sessão
 
 description:
   human:
     en_US: Creates a new Zep session or ensures one exists for the conversation
+    pt_BR: Cria uma nova sessão Zep ou garante que uma exista para a conversa
   llm: Creates a new Zep session or ensures one exists for the conversation
 
 parameters:
@@ -15,8 +17,10 @@ parameters:
     required: true
     label:
       en_US: User ID
+      pt_BR: ID do usuário
     human_description:
       en_US: The user ID to initialize a session for
+      pt_BR: O ID do usuário para inicializar uma sessão
     llm_description: The user ID to initialize a session for
     form: llm
   - name: session_id
@@ -24,8 +28,10 @@ parameters:
     required: true
     label:
       en_US: Session ID
+      pt_BR: ID da sessão
     human_description:
       en_US: The ID of the session to initialize
+      pt_BR: O ID da sessão a ser iniciada
     llm_description: The ID of the session to initialize
     form: llm
 
