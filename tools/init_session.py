@@ -1,5 +1,6 @@
 from collections.abc import Generator
 from typing import Any
+import json
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -15,15 +16,19 @@ class InitSessionTool(Tool):
             client = Zep(api_key=api_key)
 
             try:
-                client.memory.add_session(
+                session = client.memory.add_session(
                     user_id=tool_parameters["user_id"],
                     session_id=tool_parameters["session_id"],
                 )
             except BadRequestError:
-                # bad request error could only happen if the session already exists, which is fine
-                pass
+                # session exists already
+                session = client.memory.get_session(
+                    session_id=tool_parameters["session_id"]
+                )
 
-            yield self.create_json_message({"status": "success"})
+            yield self.create_json_message(
+                {"status": "success", "session": json.loads(session.json())}
+            )
         except Exception as e:
             err = str(e)
             yield self.create_json_message({"status": "error", "error": err})

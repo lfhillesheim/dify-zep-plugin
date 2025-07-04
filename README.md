@@ -24,6 +24,8 @@ Creates a Zep user and session if they don't already exist. Must be used first b
 - User ID - Unique identifier for the user
 - Session ID - Unique identifier for the conversation
 
+Returns the created or existing session details.
+
   ![init-session](_assets/init-session.png)
 
 ### 2. Add Message to Session
@@ -35,6 +37,8 @@ Saves a message to the conversation memory.
 - Session ID - The conversation to add to
 - Message - The text content to save
 - Role Type - Who sent the message (user or assistant)
+- Return Context (optional) - If true, also return relevant memory context
+- Ignore Roles (optional) - Roles to ignore when adding the message to graph memory
 
   ![add-message.png](_assets/add-message.png)
 
